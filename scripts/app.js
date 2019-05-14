@@ -2,7 +2,7 @@
 
 // Listening for the submit button here
 
-document.querySelector('#loadForm').addEventListener('submit',(e) => {
+document.querySelector('#loadForm').addEventListener('submit', (e) => {
 
     // to prevent the default behaviour here
     e.preventDefault();
@@ -17,19 +17,25 @@ document.querySelector('#loadForm').addEventListener('submit',(e) => {
 
 
     // getting values here
-    const value =parseFloat(amount);
+    const value = parseFloat(amount);
     const calInt = parseFloat(interest) / 100 / 12;
     const calPay = parseFloat(years) * 12;
 
     // calculating monthly value here
-    const x = Math.pow(1+calInt,calPay);
-    const month = (value*x*calInt)/(x-1);
+    const x = Math.pow(1 + calInt, calPay);
+    const month = (value * x * calInt) / (x - 1);
 
+    if (isFinite(month)) {
 
-    
-    
+        monthly.value = month.toFixed(2);
+        totalPay.value = (month * calPay).toFixed(2);
+        totalInt.value = ((month * calPay) - value).toFixed(2);
 
-    
+    }
+    else {
+        showError('ERROR! Please Enter Again!');
+    }
+
 
     console.log('calculating...');
 })
