@@ -15,13 +15,21 @@ document.querySelector('#loadForm').addEventListener('submit',(e) => {
     const totalPay = document.querySelector('#total-pay');
     const totalInt = document.querySelector('#total-int');
 
+
+    // getting values here
     const value =parseFloat(amount);
     const calInt = parseFloat(interest) / 100 / 12;
     const calPay = parseFloat(years) * 12;
+
+    // calculating monthly value here
+    const x = Math.pow(1+calInt,calPay);
+    const month = (value*x*calInt)/(x-1);
+
+
     
     
 
     
 
-    console.log('amount.value');
+    console.log('calculating...');
 })
