@@ -6,7 +6,7 @@ document.querySelector('#loadForm').addEventListener('submit', (e) => {
     // to prevent the default behaviour here
     e.preventDefault();
 
-    // hide res
+    // hide result
     document.getElementById('results').style.display = 'none';
 
     // show loader
@@ -83,13 +83,12 @@ const showError = (error) => {
 
     card.insertBefore(errDiv, head);
 
-    // claring the error after seconds
-
-    setTimeout(clearDiv, 3500);
+    // clearing the error after seconds
+    setTimeout(clearDiv, 2700);
 
 }
 
-
+// remove the div here
 const clearDiv = () => {
     document.querySelector('.alert').remove();
 }

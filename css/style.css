@@ -1,3 +1,4 @@
+/* hiding the result and loader DIV here */
 #loading , #results {
     display:none;
 }
