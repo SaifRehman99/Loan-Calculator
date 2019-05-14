@@ -39,3 +39,31 @@ document.querySelector('#loadForm').addEventListener('submit', (e) => {
 
     console.log('calculating...');
 })
+
+
+// show error here
+const showError = (error) => {
+
+    // creating div here
+    const errDiv = document.createElement('div');
+
+    // adding class here
+    errDiv.className = 'alert alert-danger';
+
+    // adding text here
+    errDiv.textContent = error;
+
+    // getting the element to insert the div
+    const card = document.querySelector('.card');
+    const head = document.querySelector('.heading');
+
+    card.insertBefore(errDiv, head);
+
+    // claring the error after seconds
+
+    setTimeout(clearDiv, 3000);
+
+}
+const clearDiv = () => {
+    document.querySelector('.alert').remove()''
+}
