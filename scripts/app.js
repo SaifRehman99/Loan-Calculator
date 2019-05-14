@@ -61,9 +61,9 @@ const showError = (error) => {
 
     // claring the error after seconds
 
-    setTimeout(clearDiv, 3000);
+    setTimeout(clearDiv, 3500);
 
 }
 const clearDiv = () => {
-    document.querySelector('.alert').remove()''
+    document.querySelector('.alert').remove();
 }
