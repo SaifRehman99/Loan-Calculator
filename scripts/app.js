@@ -12,7 +12,7 @@ document.querySelector('#loadForm').addEventListener('submit', (e) => {
     // show loader
     document.getElementById('loading').style.display = 'block';
 
-    setTimeout(calRESULT,2500)
+    setTimeout(calRESULT, 2500)
 
 })
 
@@ -42,14 +42,12 @@ const calRESULT = () => {
         monthly.value = month.toFixed(2);
         totalPay.value = (month * calPay).toFixed(2);
         totalInt.value = ((month * calPay) - value).toFixed(2);
-    
+
         // show res
-    document.getElementById('results').style.display = 'block';
+        document.getElementById('results').style.display = 'block';
 
-    // hide loader
-    document.getElementById('loading').style.display = 'none';
-
-
+        // hide loader
+        document.getElementById('loading').style.display = 'none';
 
 
     }
@@ -64,6 +62,11 @@ const calRESULT = () => {
 
 // show error here
 const showError = (error) => {
+    // hide res
+    document.getElementById('results').style.display = 'none';
+
+    // hide loader
+    document.getElementById('loading').style.display = 'none';
 
     // creating div here
     const errDiv = document.createElement('div');
