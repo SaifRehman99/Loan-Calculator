@@ -6,6 +6,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- font awesome here -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -22,31 +25,61 @@
           <!-- form here -->
           <form id="loadForm">
             <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-money-check-alt"></i></span>
+                </div>
+                <input type="number" class="form-control" id="amount" placeholder="Loan Amount">
               </div>
-              <input type="number" class="form-control" id="amount" placeholder="Loan Amount">
             </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">%</span>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-receipt"></i></span>
+                </div>
+                <input type="number" class="form-control" id="interest" placeholder="Interest">
               </div>
-              <input type="number" class="form-control" id="interest" placeholder="Interest">
             </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <input type="number" class="form-control" id="years" placeholder="Payment in years">
+            <div class="form-group">
+              <div class="input-group">
+                <input type="number" class="form-control" id="years" placeholder="Payment in years">
+              </div>
             </div>
-          </div>
-          <!-- submit button here  -->
-          <div class="form-group">
-            <input type="submit" value="Calculate" id="calculate" class="btn btn-info btn-block">
-          </div>
+            <!-- submit button here  -->
+            <div class="form-group">
+              <input type="submit" value="Calculate" id="calculate" class="btn btn-info btn-block">
+            </div>
           </form>
+
+          <!-- loader here -->
+
+          <div id="results">
+            <h5>Results</h5>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-calendar-week"></i></i></span>
+                </div>
+                <input type="number" class="form-control" id="monthly" disabled>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-landmark"></i></span>
+                </div>
+                <input type="number" class="form-control" id="total-pay" disabled>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-american-sign-language-interpreting"></i></span>
+                </div>
+                <input type="number" class="form-control" id="total-int" disabled>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
