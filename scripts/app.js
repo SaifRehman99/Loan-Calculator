@@ -90,5 +90,5 @@ const showError = (error) => {
 
 // remove the div here
 const clearDiv = () => {
-    document.querySelector('.alert').remove();
+    document.querySelector('.alert').remove()
 }
