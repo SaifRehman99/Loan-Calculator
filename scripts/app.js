@@ -3,9 +3,21 @@
 // Listening for the submit button here
 
 document.querySelector('#loadForm').addEventListener('submit', (e) => {
-
     // to prevent the default behaviour here
     e.preventDefault();
+
+    // hide res
+    document.getElementById('results').style.display = 'none';
+
+    // show loader
+    document.getElementById('loading').style.display = 'block';
+
+    setTimeout(calRESULT,2500)
+
+})
+
+const calRESULT = () => {
+
 
     // getting the form values here
     const amount = document.querySelector('#amount').value;
@@ -30,6 +42,15 @@ document.querySelector('#loadForm').addEventListener('submit', (e) => {
         monthly.value = month.toFixed(2);
         totalPay.value = (month * calPay).toFixed(2);
         totalInt.value = ((month * calPay) - value).toFixed(2);
+    
+        // show res
+    document.getElementById('results').style.display = 'block';
+
+    // hide loader
+    document.getElementById('loading').style.display = 'none';
+
+
+
 
     }
     else {
@@ -38,8 +59,8 @@ document.querySelector('#loadForm').addEventListener('submit', (e) => {
 
 
     console.log('calculating...');
-})
 
+}
 
 // show error here
 const showError = (error) => {
@@ -64,6 +85,8 @@ const showError = (error) => {
     setTimeout(clearDiv, 3500);
 
 }
+
+
 const clearDiv = () => {
     document.querySelector('.alert').remove();
 }
